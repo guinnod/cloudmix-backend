@@ -1,0 +1,17 @@
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "gpt_api2/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "gpt_api2/wsgi.py"
+    }
+  ]
+}
